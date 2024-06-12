@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Signup Form</title>
+</head>
+<body>
+    <script>
+        let storedUsername = null;
+        let storedPassword = null;
+
+        function promptSignup() {
+            storedUsername = prompt("Set your username:");
+            storedPassword = prompt("Set your password:");
+
+            alert("Your username and password have been set. Please log in.");
+
+            let username = prompt("Enter your username:");
+
+            let password = prompt("Enter your password:");
+
+            if (username === storedUsername && password === storedPassword) {
+                alert("Signup successfully!");
+            } else {
+                alert("Wrong username or password. You have only one try left.");
+                username = prompt("Enter your username:");
+                password = prompt("Enter your password:");
+
+                if (username === storedUsername && password === storedPassword) {
+                    alert("Signup successfully!");
+                } else {
+                    alert("Wrong username or password. Signup failed.");
+                }
+            }
+        }
+        promptSignup();
+    </script>
+</body>
+</html>
